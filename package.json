@@ -1,0 +1,8 @@
+{
+    "name": "maze-solver-server",
+    "version": "0.0.1",
+    "dependencies": {
+        "l1-path-finder": "^1.0.0",
+        "pngjs": "^4.0.0"
+    }
+}
