@@ -1,10 +1,22 @@
-import { planPath, pngPictureToArray } from '../mazesolver';
+import { planPath, pngPictureToArray, base64PictureToPngPicture } from '../mazesolver';
 import { expect } from 'chai';
 import 'mocha'
 import { fstat } from 'fs';
 
 var ndarray = require('ndarray');
 var fs = require('fs');
+
+describe('base64PictureToPngPicture function', () => {
+  it('should convert base64 image to buffer', function() {
+      var desiredBuff = fs.readFileSync('test/maze.png');
+
+      var base64picture = desiredBuff.toString('base64');
+
+      var buff = base64PictureToPngPicture(base64picture);
+
+      expect(buff).eql(desiredBuff);
+  });
+});
 
 describe('planPath function', () => {
   it('should calculate a correct path', function() {

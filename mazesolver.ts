@@ -3,6 +3,10 @@ var ndarray = require('ndarray');
 var fs = require('fs'),
 PNG = require('pngjs').PNG;
 
+export function base64PictureToPngPicture(base64Picture: string) {
+    return Buffer.from(base64Picture, 'base64');
+}
+
 export function planPath(startX: number, startY: number, goalX: number, goalY: number, maze: any) {
     // Create path planner
     var planner = createPlanner(maze);
