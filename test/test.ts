@@ -1,4 +1,4 @@
-import { planPath, pngPictureToArray, base64PictureToPngPicture } from '../mazesolver';
+import { planPath, pngPictureToArray, base64PictureToPngPicture, solveMaze } from '../mazesolver';
 import { expect } from 'chai';
 import 'mocha'
 import { fstat } from 'fs';
@@ -55,5 +55,31 @@ describe('pngPictureToArray function', () => {
         ], [8, 7])
 
       expect(desiredMaze).eql(maze);
+  });
+});
+
+describe('solveMaze function', () => {
+  it('should solve a maze', function() {
+      var event = {
+        'threshold': 123,
+        'picture': 'iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC',
+        'content-type': 'image/png',
+        'start': {
+          'x': 0,
+          'y': 0
+        },
+        'goal': {
+          'x': 7,
+          'y': 6
+        }
+      }
+
+      var pathInfo = solveMaze(event);
+
+      var result = JSON.stringify(pathInfo);
+
+      var desiredResult = '{"path":[0,0,7,0,7,2,0,2,0,4,1,4,1,6,3,6,5,6,5,4,7,4,7,6],"dist":31}'
+
+      expect(result).eql(desiredResult);
   });
 });

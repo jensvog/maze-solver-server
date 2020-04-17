@@ -40,3 +40,10 @@ export function pngPictureToArray(pngPicture: Buffer, threshold: number) {
 
     return picArray;
 }
+
+export function solveMaze(event: any) {
+    var picture = base64PictureToPngPicture(event.picture);
+    var picArray = pngPictureToArray(picture, event.threshold);
+    var pathInfo = planPath(event.start.x, event.start.y, event.goal.x, event.goal.y, picArray);
+    return pathInfo;
+}
