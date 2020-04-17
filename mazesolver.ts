@@ -6,7 +6,9 @@ export function planPath(startX: number, startY: number, goalX: number, goalY: n
 
     // Find path
     var path = [];
-    planner.search(startX, startY, goalX, goalY, path);
+    var dist = planner.search(startX, startY, goalX, goalY, path);
 
-    return path;
+    var pathInfo = {'path': path, 'dist': dist};
+
+    return pathInfo;
 }
