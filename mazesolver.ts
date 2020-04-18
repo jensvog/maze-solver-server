@@ -1,9 +1,7 @@
-import { start } from "repl";
-
 var createPlanner = require('l1-path-finder');
 var ndarray = require('ndarray');
-var fs = require('fs'),
-PNG = require('pngjs').PNG;
+
+var PNG = require('pngjs').PNG;
 
 export function base64PictureToPicture(base64Picture: string) {
     return Buffer.from(base64Picture, 'base64');

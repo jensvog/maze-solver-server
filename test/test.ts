@@ -1,7 +1,6 @@
 import { planPath, pngPictureToArray, base64PictureToPicture, solveMaze } from '../mazesolver';
 import { expect } from 'chai';
 import 'mocha'
-import { fstat } from 'fs';
 
 var ndarray = require('ndarray');
 var fs = require('fs');
