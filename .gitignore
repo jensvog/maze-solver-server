@@ -116,3 +116,6 @@ dist
 
 # secrets
 .secrets
+
+# Webpack directories
+.webpack
