@@ -4,6 +4,12 @@ maze-solver-server is a node.js based application, that calculates a path based 
 given API request. The application is designed for AWS lambda. The application is
 written in TypeScript.
 
+## Usage
+
+The API can be used by sending HTTP Post request to the API endpoint. The application
+expects the request in a specific format. It can be seen in the models/maze.json. The
+application uses a request validator to check if the sent data is correct.
+
 ## Installation
 
 ### Dependencies
@@ -20,7 +26,12 @@ Unit tests are written with mocha chai. Run unit tests with
 
 ## CI environment
 
-The project uses GitHub actions to automatically test the application.
+The project uses GitHub actions to automatically test and deploy the application. The
+repository needs some secrets to work:
+```
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+```
 
 ## Deploy with serverless
 
