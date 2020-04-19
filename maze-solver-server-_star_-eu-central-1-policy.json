@@ -47,7 +47,8 @@
         "s3:PutAccelerateConfiguration",
         "s3:GetEncryptionConfiguration",
         "s3:PutEncryptionConfiguration",
-        "s3:PutBucketPolicy"
+        "s3:PutBucketPolicy",
+        "s3:DeleteBucketPolicy"
       ],
       "Resource": [
         "arn:aws:s3:::maze-solver-server*serverlessdeploy*"
