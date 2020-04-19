@@ -59,6 +59,9 @@ export function pngPictureToArray(pngPicture: Buffer, threshold: number) {
 }
 
 export function solveMaze(event: any) {
+    if (event.threshold === undefined) {
+        event.threshold = 123;
+    }
     if (event.threshold < 0 || event.threshold > 255) {
         throw { status: 400, message: 'threshold out of bounce. Must be between 0 and 255' };
     }
