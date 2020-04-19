@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "maze",
+    "type": "object",
+    "properties": {
+      "threshold": {
+        "type": "number"
+      },
+      "data": {
+        "type": "string"
+      },
+      "datatype": {
+        "type": "string"
+      },
+      "start": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          }
+        },
+        "required": ["x", "y"]
+      },
+      "goal": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          }
+        },
+        "required": ["x", "y"]
+      }
+    },
+    "required": ["data", "datatype", "start", "goal"]
+  }

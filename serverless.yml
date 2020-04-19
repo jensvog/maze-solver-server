@@ -29,3 +29,6 @@ functions:
       - http:
           method: post
           path: solvemaze
+          request:
+            schema:
+              application/json: ${file(models/maze.json)}

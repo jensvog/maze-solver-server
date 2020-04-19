@@ -87,7 +87,8 @@
         "apigateway:POST",
         "apigateway:PUT",
         "apigateway:DELETE",
-        "apigateway:PATCH"
+        "apigateway:PATCH",
+        "apigateway:UpdateRestApiPolicy"
       ],
       "Resource": [
         "arn:aws:apigateway:*::/restapis*",
