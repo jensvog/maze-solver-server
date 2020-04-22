@@ -11,7 +11,10 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12.x'
+        registry-url: https://npm.pkg.github.com/
     - run: npm ci
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: npm test
   deploy:
     needs: test
@@ -22,10 +25,31 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12.x'
+        registry-url: https://npm.pkg.github.com/
     - run: npm ci
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - uses: serverless/github-action@master
       with:
         args: deploy
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  int-test:
+    needs: deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+        registry-url: https://npm.pkg.github.com/
+    - run: npm i -g serverless
+    - run: npm ci
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - run: serverless postmanenv
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
