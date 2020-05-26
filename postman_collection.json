@@ -67,9 +67,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{api}}",
+					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{api}}"
+						"{{apiurl}}/solvemaze"
 					]
 				}
 			},
@@ -136,9 +136,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{api}}",
+					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{api}}"
+						"{{apiurl}}/solvemaze"
 					]
 				}
 			},
@@ -173,9 +173,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{api}}",
+					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{api}}"
+						"{{apiurl}}/solvemaze"
 					]
 				}
 			},
@@ -210,9 +210,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{api}}",
+					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{api}}"
+						"{{apiurl}}/solvemaze"
 					]
 				}
 			},
@@ -247,9 +247,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{api}}",
+					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{api}}"
+						"{{apiurl}}/solvemaze"
 					]
 				}
 			},
@@ -284,9 +284,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{api}}",
+					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{api}}"
+						"{{apiurl}}/solvemaze"
 					]
 				}
 			},
@@ -321,9 +321,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{api}}",
+					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{api}}"
+						"{{apiurl}}/solvemaze"
 					]
 				}
 			},
@@ -358,9 +358,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{api}}",
+					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{api}}"
+						"{{apiurl}}/solvemaze"
 					]
 				}
 			},
@@ -395,9 +395,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{api}}",
+					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{api}}"
+						"{{apiurl}}/solvemaze"
 					]
 				}
 			},
