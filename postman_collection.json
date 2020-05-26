@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "5fdbe667-17ed-4dad-a3b6-f01193b33fd0",
+		"name": "maze-solver-int-tests",
+		"description": "Integration tests for the maze-solver-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send maze",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Maze is solved\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql({",
+							"    \"path\": [",
+							"        0,",
+							"        0,",
+							"        7,",
+							"        0,",
+							"        7,",
+							"        2,",
+							"        0,",
+							"        2,",
+							"        0,",
+							"        4,",
+							"        1,",
+							"        4,",
+							"        1,",
+							"        6,",
+							"        3,",
+							"        6,",
+							"        5,",
+							"        6,",
+							"        5,",
+							"        4,",
+							"        7,",
+							"        4,",
+							"        7,",
+							"        6",
+							"    ],",
+							"    \"dist\": 31",
+							"});",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"threshold\": 123,\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"png\",\r\n    \"start\": {\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 7,\r\n        \"y\": 6\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}",
+					"host": [
+						"{{api}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send maze w/o threshold",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Maze is solved\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql({",
+							"    \"path\": [",
+							"        0,",
+							"        0,",
+							"        7,",
+							"        0,",
+							"        7,",
+							"        2,",
+							"        0,",
+							"        2,",
+							"        0,",
+							"        4,",
+							"        1,",
+							"        4,",
+							"        1,",
+							"        6,",
+							"        3,",
+							"        6,",
+							"        5,",
+							"        6,",
+							"        5,",
+							"        4,",
+							"        7,",
+							"        4,",
+							"        7,",
+							"        6",
+							"    ],",
+							"    \"dist\": 31",
+							"});",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"png\",\r\n    \"start\": {\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 7,\r\n        \"y\": 6\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}",
+					"host": [
+						"{{api}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send incorrect data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"test\": 123\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}",
+					"host": [
+						"{{api}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send incorrect picture",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"exec": [
+							"pm.test(\"Status code is 415\", function () {",
+							"    pm.response.to.have.status(415);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"png\",\r\n    \"start\": {\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 7,\r\n        \"y\": 6\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}",
+					"host": [
+						"{{api}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send threshold out of bounds",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"threshold\": 256,\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"png\",\r\n    \"start\": {\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 7,\r\n        \"y\": 6\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}",
+					"host": [
+						"{{api}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send unsupported datatype",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"exec": [
+							"pm.test(\"Status code is 415\", function () {",
+							"    pm.response.to.have.status(415);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"threshold\": 123,\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"jpg\",\r\n    \"start\": {\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 7,\r\n        \"y\": 6\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}",
+					"host": [
+						"{{api}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send start outside of picture",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"threshold\": 123,\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"png\",\r\n    \"start\": {\r\n        \"x\": -1,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 7,\r\n        \"y\": 6\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}",
+					"host": [
+						"{{api}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send goal outside of picture Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"threshold\": 123,\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"png\",\r\n    \"start\": {\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 8,\r\n        \"y\": 6\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}",
+					"host": [
+						"{{api}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send no path found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"threshold\": 255,\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"png\",\r\n    \"start\": {\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 7,\r\n        \"y\": 6\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}",
+					"host": [
+						"{{api}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
