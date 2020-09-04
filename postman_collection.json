@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5fdbe667-17ed-4dad-a3b6-f01193b33fd0",
+		"_postman_id": "8ef2a6ba-0509-4ea4-9599-dc4862a2aa85",
 		"name": "maze-solver-int-tests",
 		"description": "Integration tests for the maze-solver-server",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"id": "89a4c85a-0676-43cd-b1e5-98d27951aa93",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -56,7 +56,13 @@
 			],
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{apiKeydevMazeSolver}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n\t\"threshold\": 123,\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"png\",\r\n    \"start\": {\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 7,\r\n        \"y\": 6\r\n    }\r\n}",
@@ -69,7 +75,10 @@
 				"url": {
 					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{apiurl}}/solvemaze"
+						"{{apiurl}}"
+					],
+					"path": [
+						"solvemaze"
 					]
 				}
 			},
@@ -81,7 +90,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"id": "33aabc44-a8f4-4135-a019-b7e21e3f3e57",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -125,7 +134,13 @@
 			],
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{apiKeydevMazeSolver}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"png\",\r\n    \"start\": {\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 7,\r\n        \"y\": 6\r\n    }\r\n}",
@@ -138,7 +153,10 @@
 				"url": {
 					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{apiurl}}/solvemaze"
+						"{{apiurl}}"
+					],
+					"path": [
+						"solvemaze"
 					]
 				}
 			},
@@ -150,7 +168,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"id": "84e58a12-100c-4278-b915-20bd68462606",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -162,7 +180,13 @@
 			],
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{apiKeydevMazeSolver}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n\t\"test\": 123\r\n}",
@@ -175,7 +199,10 @@
 				"url": {
 					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{apiurl}}/solvemaze"
+						"{{apiurl}}"
+					],
+					"path": [
+						"solvemaze"
 					]
 				}
 			},
@@ -187,7 +214,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"id": "46152005-3104-4b88-9fcc-e1cd996a1dae",
 						"exec": [
 							"pm.test(\"Status code is 415\", function () {",
 							"    pm.response.to.have.status(415);",
@@ -199,7 +226,13 @@
 			],
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{apiKeydevMazeSolver}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"png\",\r\n    \"start\": {\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 7,\r\n        \"y\": 6\r\n    }\r\n}",
@@ -212,7 +245,10 @@
 				"url": {
 					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{apiurl}}/solvemaze"
+						"{{apiurl}}"
+					],
+					"path": [
+						"solvemaze"
 					]
 				}
 			},
@@ -224,7 +260,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"id": "19d1696e-309d-4f9e-9cd6-28ee626b248f",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -236,7 +272,13 @@
 			],
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{apiKeydevMazeSolver}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n\t\"threshold\": 256,\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"png\",\r\n    \"start\": {\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 7,\r\n        \"y\": 6\r\n    }\r\n}",
@@ -249,7 +291,10 @@
 				"url": {
 					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{apiurl}}/solvemaze"
+						"{{apiurl}}"
+					],
+					"path": [
+						"solvemaze"
 					]
 				}
 			},
@@ -261,7 +306,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"id": "b3eec81d-e970-4323-9ebe-871c388c18dd",
 						"exec": [
 							"pm.test(\"Status code is 415\", function () {",
 							"    pm.response.to.have.status(415);",
@@ -273,7 +318,13 @@
 			],
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{apiKeydevMazeSolver}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n\t\"threshold\": 123,\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"jpg\",\r\n    \"start\": {\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 7,\r\n        \"y\": 6\r\n    }\r\n}",
@@ -286,7 +337,10 @@
 				"url": {
 					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{apiurl}}/solvemaze"
+						"{{apiurl}}"
+					],
+					"path": [
+						"solvemaze"
 					]
 				}
 			},
@@ -298,7 +352,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"id": "e49b2384-ee3e-47e4-9f45-a8ca16c1a636",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -310,7 +364,13 @@
 			],
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{apiKeydevMazeSolver}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n\t\"threshold\": 123,\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"png\",\r\n    \"start\": {\r\n        \"x\": -1,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 7,\r\n        \"y\": 6\r\n    }\r\n}",
@@ -323,7 +383,10 @@
 				"url": {
 					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{apiurl}}/solvemaze"
+						"{{apiurl}}"
+					],
+					"path": [
+						"solvemaze"
 					]
 				}
 			},
@@ -335,7 +398,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"id": "3840702b-bf82-4bb2-a87e-567284b94b8b",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -347,7 +410,13 @@
 			],
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{apiKeydevMazeSolver}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n\t\"threshold\": 123,\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"png\",\r\n    \"start\": {\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 8,\r\n        \"y\": 6\r\n    }\r\n}",
@@ -360,7 +429,10 @@
 				"url": {
 					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{apiurl}}/solvemaze"
+						"{{apiurl}}"
+					],
+					"path": [
+						"solvemaze"
 					]
 				}
 			},
@@ -372,7 +444,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "68747c8e-74c2-4760-9a06-9ac28d03223c",
+						"id": "ecdcae93-66c0-43cc-87d6-8881405c4c58",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -384,7 +456,13 @@
 			],
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{apiKeydevMazeSolver}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n\t\"threshold\": 255,\r\n    \"data\": \"iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAIAAAC6O5sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAxSURBVBhXY/z//z8D8QCoGreO6urqqqoqKAcJQHUwMqJrZYLSSACoCEhCJdBtYmAAANWZFNu+DbQ1AAAAAElFTkSuQmCC\",\r\n    \"datatype\": \"png\",\r\n    \"start\": {\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    },\r\n    \"goal\": {\r\n        \"x\": 7,\r\n        \"y\": 6\r\n    }\r\n}",
@@ -397,7 +475,10 @@
 				"url": {
 					"raw": "{{apiurl}}/solvemaze",
 					"host": [
-						"{{apiurl}}/solvemaze"
+						"{{apiurl}}"
+					],
+					"path": [
+						"solvemaze"
 					]
 				}
 			},
