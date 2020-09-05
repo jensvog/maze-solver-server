@@ -25,6 +25,13 @@ provider:
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
   apiKeys:
     - ${opt:stage, 'dev'}MazeSolver
+  usagePlan:
+    quota:
+      limit: 50000
+      period: MONTH
+    throttle:
+      burstLimit: 1000
+      rateLimit: 500
 
 functions:
   solvemaze:
