@@ -3,10 +3,10 @@ import 'source-map-support/register';
 import { solveMaze } from './mazesolver';
 
 export const maze: APIGatewayProxyHandler = async (event, _context) => {
-  var apiRequest = JSON.parse(event.body);
+  var requestBody = JSON.parse(event.body);
 
   try {
-    var pathInfo = solveMaze(apiRequest);
+    const pathInfo = solveMaze(requestBody);
     return {
       statusCode: 200,
       body: JSON.stringify(pathInfo)
