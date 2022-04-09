@@ -1,5 +1,4 @@
-service:
-  name: maze-solver-server
+service: maze-solver-server
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
@@ -21,17 +20,18 @@ provider:
   stage: ${opt:stage, 'dev'}
   apiGateway:
     minimumCompressionSize: 1024 # Enable gzip compression for responses > 1 KB
+    apiKeys:
+      - ${opt:stage, 'dev'}MazeSolver
+    usagePlan:
+      quota:
+        limit: 50000
+        period: MONTH
+      throttle:
+        burstLimit: 1000
+        rateLimit: 500
   environment:
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
-  apiKeys:
-    - ${opt:stage, 'dev'}MazeSolver
-  usagePlan:
-    quota:
-      limit: 50000
-      period: MONTH
-    throttle:
-      burstLimit: 1000
-      rateLimit: 500
+  
 
 functions:
   solvemaze:
@@ -41,6 +41,6 @@ functions:
           method: post
           path: solvemaze
           request:
-            schema:
+            schemas:
               application/json: ${file(models/maze.json)}
           private: true
